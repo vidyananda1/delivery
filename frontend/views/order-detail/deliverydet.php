@@ -89,7 +89,7 @@ $dstatus = ['PENDING'=>'PENDING','DELIVERED'=>'DELIVERED','OUT FOR DELIVERY'=>'O
             [
                 'attribute'=>'customer_phone',
                 'value'=>function($model) {
-                    $cus = Customer::find()->where(['phone'=>$model->customer_phone])->one();
+                    $cus = Customer::find()->where(['id'=>$model->customer_id])->one();
                     return isset($cus) ? 
                     $cus->sec_phone : '';
                 },
@@ -99,7 +99,7 @@ $dstatus = ['PENDING'=>'PENDING','DELIVERED'=>'DELIVERED','OUT FOR DELIVERY'=>'O
             [
                 'attribute'=>'customer_phone',
                 'value'=>function($model) {
-                    $cus = Customer::find()->where(['phone'=>$model->customer_phone])->one();
+                    $cus = Customer::find()->where(['id'=>$model->customer_id])->one();
                     return isset($cus) ? 
                     $cus->address : '';
                 },
@@ -109,7 +109,7 @@ $dstatus = ['PENDING'=>'PENDING','DELIVERED'=>'DELIVERED','OUT FOR DELIVERY'=>'O
             [
                 'attribute'=>'customer_phone',
                 'value'=>function($model) {
-                    $cus = Customer::find()->where(['phone'=>$model->customer_phone])->one();
+                    $cus = Customer::find()->where(['id'=>$model->customer_id])->one();
                     return isset($cus) ? 
                     $cus->landmark : '';
                 },
@@ -119,7 +119,7 @@ $dstatus = ['PENDING'=>'PENDING','DELIVERED'=>'DELIVERED','OUT FOR DELIVERY'=>'O
             [
                 'attribute'=>'customer_phone',
                 'value'=>function($model) {
-                    $cus = Customer::find()->where(['phone'=>$model->customer_phone])->one();
+                    $cus = Customer::find()->where(['id'=>$model->customer_id])->one();
                     return isset($cus) ? 
                     $cus->sec_address : '';
                 },
@@ -129,7 +129,7 @@ $dstatus = ['PENDING'=>'PENDING','DELIVERED'=>'DELIVERED','OUT FOR DELIVERY'=>'O
             [
                 'attribute'=>'customer_phone',
                 'value'=>function($model) {
-                    $cus = Customer::find()->where(['phone'=>$model->customer_phone])->one();
+                    $cus = Customer::find()->where(['id'=>$model->customer_id])->one();
                     return isset($cus) ? 
                     $cus->sec_landmark : '';
                 },

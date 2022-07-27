@@ -249,7 +249,7 @@ class OrderDetailController extends Controller
         $modelitem = [new OrderItem()];
 
         if ($model->load(Yii::$app->request->post()) ) {
-            $cus = "#INV".$this->randomNoGenerator(4);
+            $cus = "#".$this->randomNoGenerator(4);
             $model->invoice = $cus;
 
             $model->updated_by = Yii::$app->user->id;

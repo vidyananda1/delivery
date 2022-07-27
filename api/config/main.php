@@ -47,33 +47,39 @@ return [
                 //         '{id}' => '<id:\\w+>'
                 //     ],
                 // ],
-                [
-                    'class' => 'yii\rest\UrlRule', 
-                    'controller' => 'v1/login',
-                    'extraPatterns' => [
-                        'POST login' => 'login',
-                        'POST getusers' => 'getusers'
-                        
-                    ],
-                    'tokens' => [
-                        '{id}' => '<id:\\w+>'
-                    ],
-                ],
                 // [
                 //     'class' => 'yii\rest\UrlRule', 
-                //     'controller' => 'v1/applyleave',
+                //     'controller' => 'v1/login',
                 //     'extraPatterns' => [
-                //         'POST apply' => 'apply',
-                //         'POST countday' => 'countday',
-                //         'POST leavename' => 'leavename',
-                //         'POST category' => 'category',
-                //         'POST approvalstatus' => 'approvalstatus',
-                //         'POST balance' => 'balance'
+                //         'POST login' => 'login',
+                //         'POST getusers' => 'getusers'
+                        
                 //     ],
                 //     'tokens' => [
                 //         '{id}' => '<id:\\w+>'
                 //     ],
                 // ],
+                [
+                    'class' => 'yii\rest\UrlRule', 
+                    'controller' => 'v1/seller',
+                    'extraPatterns' => [
+                        'POST sellerlogin' => 'sellerlogin',
+                        'POST getusers' => 'getusers',
+                        'POST checkcustomer' => 'checkcustomer',
+                        'POST addcustomer' => 'addcustomer',
+                        'GET orderlist' => 'orderlist',
+                        'GET ordertoday' => 'ordertoday',
+                        'GET customerdata' => 'customerdata',
+                        'PUT customerupdate' => 'customerupdate',
+                        'GET carouselimage' => 'carouselimage',
+                        'GET payout' => 'payout',
+                        'POST assignorder' => 'assignorder',
+                        'POST changepassword' => 'changepassword',
+                    ],
+                    'tokens' => [
+                        '{id}' => '<id:\\w+>'
+                    ],
+                ],
 
                 // [
                 //     'class' => 'yii\rest\UrlRule', 
@@ -93,14 +99,15 @@ return [
 
                 [
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => 'v1/master',
+                    'controller' => 'v1/rider',
                     'extraPatterns' => [
-                        'POST status' => 'departmentadd',
-                        'POST statusdetail' => 'statusdetail',
-                        'POST statusadmin' => 'statusadmin',
-                        'POST statusdetailadmin' => 'statusdetailadmin',
-                        'POST dashboard' => 'dashboard',
-                        'POST dashboardadmin' => 'dashboardadmin'
+                        'GET deliverytoday' => 'deliverytoday',
+                        'GET alldelivery' => 'alldelivery',
+                        'PUT updatedelivery' => 'updatedelivery',
+                        'GET carouselimage' => 'carouselimage',
+                        'POST riderlogin' => 'riderlogin',
+                        'POST getusers' => 'getusers',
+                        'POST changepassword' => 'changepassword',
                     ],
                     'tokens' => [
                         '{id}' => '<id:\\w+>'

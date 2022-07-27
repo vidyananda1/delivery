@@ -4,7 +4,7 @@ use Yii;
 
 class Report extends  \yii\base\Model
 {
-    public $start_date,$end_date;
+    public $start_date,$end_date,$delivery_status;
     public function rules()
     {
         return [

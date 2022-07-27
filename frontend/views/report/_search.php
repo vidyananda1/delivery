@@ -3,21 +3,32 @@ use dosamigos\datepicker\DateRangePicker;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 ?>
-<?php $form = ActiveForm::begin([
+
+<div class="row">
+  <div class="col-md-6">
+    <?php $form = ActiveForm::begin([
               // 'action' => ['index'],
               // 'method' => 'get',
               'id'=>$formName
           ]); ?>
        <?= DateRangePicker::widget([
-    'name' => 'date_from',
-    'value' => date("Y-m-d"),
-    'nameTo' => 'name_to',
-    'valueTo' =>  date("Y-m-d"),
-    'clientOptions' => [
-        'autoclose' => true,
-        'format' => 'yyyy-mm-dd'
-    ]
-]);?>    
+            'name' => 'date_from',
+            'value' => date("Y-m-d"),
+            'nameTo' => 'name_to',
+            'valueTo' =>  date("Y-m-d"),
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-mm-dd',
+
+            ]
+        ]);?>
+  </div>
+  <div class="col-md-6">
+    <?= $form->field($model, 'delivery_status')->dropDownList([ 'CANCEL ALL' => 'CANCEL ALL', 
+    'CANCEL PARTIAL' => 'CANCEL PARTIAL', 'DELIVERED' => 'DELIVERED' ], ['prompt' => '-------------------- Select Delivery Status --------------------'])->label(false) ?>
+  </div>
+</div>
+
 <br>      <div class="text-center">      
           <button type="submit" id=<?=$button?> url=<?=$url ?> class="btn btn-success reportBtn"  formtarget="_blank">Submit</button>
           <button type="input" id=<?=$button."reset"?>  class="btn btn-warning reportBtn"  >Reset</button>

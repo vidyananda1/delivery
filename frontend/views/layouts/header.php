@@ -12,7 +12,7 @@ date_default_timezone_set('Asia/Kolkata');
 <!-- <img src="images/nk2.png"> -->
 <?= Html::csrfMetaTags() ?>
 
-    <?= Html::a('<span class="logo-mini"></span><span class="logo-lg">DEMO</span>', Yii::$app->homeUrl, ['class' => 'logo' ]) ?>
+    <?= Html::a('<span class="logo-mini"></span><span class="logo-lg">Delivery Management</span>', Yii::$app->homeUrl, ['class' => 'logo' ]) ?>
 
     <nav class="navbar navbar-static-top " role="navigation">
 

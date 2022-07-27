@@ -39,7 +39,7 @@ $this->title = '';
 
 <div style="background:#dae2e3; padding: 20px;border-radius: 7px">
   <br>
-<div class="row ">
+<div class="row body">
     <div class="col-lg-4 col-xs-4">
       <div class="info-box shadow" style="border-radius: 3px;padding:5px 10px 10px 20px;">
 
@@ -84,20 +84,25 @@ $this->title = '';
    
   </div>
 <br><br>
-
+<div  class="row ">
+<div class="col-md-12">
 <div class="panel panel-body" >
-        <div class="panel-heading" style="">
+        <div class="panel-heading body" style="">
              
             <p>
                 <b class="text-muted" style="font-size: 17px">Showing Today's Delivery Activity</b> 
-                <?= Html::a("<span class = 'glyphicon glyphicon-print'></span>", ['activeorder'], ['class' => 'btn btn-success','style'=>'float:right']) ?>
+                <button id="print" class="btn btn-sm btn-success" style="float:right"><span class = 'glyphicon glyphicon-print'></span></button>
             </p>
         </div>
     <br><br>
     
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <div class=" table-responsive">
+
+    
+        
+    <div class="table-responsive">
+      <div class=" report">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
@@ -211,12 +216,13 @@ $this->title = '';
             //['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
 </div>
 </div>
-
+</div>
+</div>
+</div>
 <br><br>
-<div class="row">
+<div class="row body">
 
 <div class="col-md-12 " >
       <div class="card shadow" style="background-color: white;padding: 25px;">
@@ -357,4 +363,31 @@ function drawBasic() {
             
     }
 
+  @media print {
+  body  *{
+    visibility: hidden;
+  }
+  .report, .report * {
+    visibility: visible;
+  }
+  .report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*border-collapse: collapse;*/
+    
+  }
+
+}
+
 </style>
+<?php
+$this->registerJs('
+$("#print").click(function(){
+    // var divName = "report";
+    // var printContents = document.getElementById(divName).innerHTML;
+    // document.body.innerHTML = printContents;
+    window.print();
+})
+');
