@@ -600,7 +600,7 @@ class SellerController extends ActiveController
 						}
 						
 						if($orderdet && $item ){
-							 echo "<pre>";print_r($item);die;
+							// echo "<pre>";print_r($item);die;
 
 							//return json_encode($status);
 							$data = ['status'=>'success', 'msg'=>$orderdet, 'msg1'=>$item];
